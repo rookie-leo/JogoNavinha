@@ -128,30 +128,30 @@ tracks/2/keys = {
 [node name="Node2D" type="Node2D"]
 position = Vector2( 560, 250 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Inimigo" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="SpriteInimigo" type="Sprite" parent="Area2D"]
+[node name="SpriteInimigo" type="Sprite" parent="Inimigo"]
 position = Vector2( -0.848206, 3.5 )
 scale = Vector2( 0.353571, 0.353571 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 11, 10, 274, 260 )
 
-[node name="SpriteExplosao" type="Sprite" parent="Area2D"]
+[node name="SpriteExplosao" type="Sprite" parent="Inimigo"]
 scale = Vector2( 0.667811, 0.62371 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 76, 78, 146, 158 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo"]
 position = Vector2( -4.17233e-07, 0 )
 shape = SubResource( 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo"]
 autoplay = "Voando"
 anims/RESET = SubResource( 2 )
 anims/Voando = SubResource( 3 )
 anims/explodindo = SubResource( 4 )
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="colide_nave"]
-[connection signal="animation_finished" from="Area2D/AnimationPlayer" to="Area2D" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="body_entered" from="Inimigo" to="Inimigo" method="colide_nave"]
+[connection signal="animation_finished" from="Inimigo/AnimationPlayer" to="Inimigo" method="_on_AnimationPlayer_animation_finished"]
