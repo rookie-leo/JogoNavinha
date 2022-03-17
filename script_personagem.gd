@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var tipo_disparo = 1
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -36,6 +38,7 @@ func _process(delta):
 		var cena_disparo = preload("res://cena_disparo.tscn")
 		var objeto_disparo = cena_disparo.instance()
 		objeto_disparo.global_position = $Position2D.global_position
+		objeto_disparo.get_node("Area2D").tipoDisparo = tipo_disparo
 		
 		get_tree().root.add_child(objeto_disparo)
 

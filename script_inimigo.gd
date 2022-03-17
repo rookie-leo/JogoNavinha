@@ -1,20 +1,14 @@
 extends Area2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+var velocidade = 150
+var qtd_vida = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var velocidade = 150
 func _process(delta):
-	position.y += (velocidade * delta)
+	if (qtd_vida<=0):
+		$AnimationPlayer.play("explodindo")
+	else:
+		position.y += velocidade * delta
 
 
 func colide_nave(body):

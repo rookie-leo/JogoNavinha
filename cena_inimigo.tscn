@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://imagens/vtrwJTO.png" type="Texture" id=1]
 [ext_resource path="res://script_inimigo.gd" type="Script" id=2]
@@ -57,6 +57,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ true ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("SpriteInimigo:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "Voando"
@@ -84,6 +96,9 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
+
+[sub_resource type="Animation" id=5]
+resource_name = "dano"
 
 [sub_resource type="Animation" id=4]
 resource_name = "explodindo"
@@ -125,6 +140,22 @@ tracks/2/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "sofrendo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("SpriteInimigo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 560, 250 )
 
@@ -151,7 +182,9 @@ shape = SubResource( 1 )
 autoplay = "Voando"
 anims/RESET = SubResource( 2 )
 anims/Voando = SubResource( 3 )
+anims/dano = SubResource( 5 )
 anims/explodindo = SubResource( 4 )
+anims/sofrendo = SubResource( 6 )
 
 [connection signal="body_entered" from="Inimigo" to="Inimigo" method="colide_nave"]
 [connection signal="animation_finished" from="Inimigo/AnimationPlayer" to="Inimigo" method="_on_AnimationPlayer_animation_finished"]
