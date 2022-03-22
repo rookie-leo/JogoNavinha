@@ -17,9 +17,16 @@ script = ExtResource( 2 )
 scale = Vector2( 0.196, 0.196 )
 texture = ExtResource( 1 )
 
+[node name="Sprite2" type="Sprite" parent="Personagem"]
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Personagem"]
 position = Vector2( -2, 1.00323 )
 polygon = PoolVector2Array( -44, 41, -45, 19, -42, 30, -37, 34, -37, 28, -33, 34, -27, 29, -24, 32, -24, 27, -8, 7, -8, 0, -4, -6, -8, -9, -1, -22, 1, -44, 3, -44, 5, -22, 11, -10, 9, -7, 11, -2, 12, 7, 37, 34, 40, 29, 41, 34, 45, 32, 49, 20, 49, 41, 47, 43, 46, 39, 40, 42, 35, 48, 34, 44, 26, 38, 15, 47, 10, 47, 2, 47, -7, 47, -12, 46, -24, 40, -30, 44, -31, 48, -36, 42 )
 
 [node name="Position2D" type="Position2D" parent="Personagem"]
 position = Vector2( 0, -53.9968 )
+
+[node name="Timer" type="Timer" parent="Personagem"]
+wait_time = 3.0
+
+[connection signal="timeout" from="Personagem/Timer" to="Personagem" method="_on_Timer_timeout"]

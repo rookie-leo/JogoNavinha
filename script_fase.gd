@@ -1,5 +1,14 @@
 extends Node2D
 
+func _ready():
+	print_tree() #Mostra a arvore de execução
+	
+	$ParallaxBackground/ProgressBar.value = Global.total_vida_inicial
+	Global.total_vidas_atual = Global.total_vida_inicial
+	
+func _process(delta):
+	$ParallaxBackground/ProgressBar.value = Global.total_vidas_atual
+
 func _criar_inimigo_timeout():
 	#Cria o personagem inimigo
 	var cena_inimigo = preload("res://cena_inimigo.tscn")
@@ -12,4 +21,4 @@ func _criar_inimigo_timeout():
 	objeto_inimigo.global_position = posicao_nave
 	
 	#Imprime o inimigo na tela
-	get_tree().root.add_child(objeto_inimigo)
+	get_tree().root.get_node(".").add_child(objeto_inimigo)

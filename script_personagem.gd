@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-var velocidade = 150
+var velocidade = 250
 func _process(delta):
 	#Movimentacao da nave	
 	if (Input.is_action_pressed("paraCima")): 
@@ -42,3 +42,11 @@ func _process(delta):
 		
 		get_tree().root.add_child(objeto_disparo)
 
+
+
+func _on_Timer_timeout():
+	tipo_disparo = 1
+
+func morrer():
+	queue_free()
+	get_tree().change_scene("res://cena_game_over.tscn")

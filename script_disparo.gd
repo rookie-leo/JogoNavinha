@@ -1,9 +1,9 @@
 extends Node2D
 
 var tipoDisparo: int
-var velocidade = 350
+var velocidade = 300
 var danoDisparo1 = 1
-var danoDisparo2 = 2
+var danoDisparo2 = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
