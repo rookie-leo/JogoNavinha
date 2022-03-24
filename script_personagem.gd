@@ -41,6 +41,8 @@ func _process(delta):
 		objeto_disparo.get_node("Area2D").tipoDisparo = tipo_disparo
 		
 		get_tree().root.add_child(objeto_disparo)
+		
+		$AudioStreamPlayer.play(0.3)
 
 
 

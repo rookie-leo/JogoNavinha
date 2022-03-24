@@ -12,9 +12,10 @@ func _ready():
 	
 	if (tipoDisparo==1):
 		$Disparo1.visible = true
+		
 	elif (tipoDisparo==2):
 		$Disparo2.visible = true
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -44,3 +45,8 @@ func acerto_disparo(area2dInimigo):
 			area2dInimigo.get_node("AnimationPlayer").play("sofrendo")
 			#Apaga o disparo
 		queue_free()
+
+
+func _on_AudioStreamPlayer_finished():
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.queue_free()

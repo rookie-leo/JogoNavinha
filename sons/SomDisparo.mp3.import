@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SomDisparo.mp3-bdb65c23ed66630d848f0551e5154ee6.mp3str"
+
+[deps]
+
+source_file="res://sons/SomDisparo.mp3"
+dest_files=[ "res://.import/SomDisparo.mp3-bdb65c23ed66630d848f0551e5154ee6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

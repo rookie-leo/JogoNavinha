@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://imagens/nave-removebg-preview.png" type="Texture" id=1]
 [ext_resource path="res://script_personagem.gd" type="Script" id=2]
+[ext_resource path="res://sons/metralhadora.wav" type="AudioStream" id=3]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 243, 334 )
@@ -28,5 +29,8 @@ position = Vector2( 0, -53.9968 )
 
 [node name="Timer" type="Timer" parent="Personagem"]
 wait_time = 3.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Personagem"]
+stream = ExtResource( 3 )
 
 [connection signal="timeout" from="Personagem/Timer" to="Personagem" method="_on_Timer_timeout"]

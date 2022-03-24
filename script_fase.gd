@@ -8,6 +8,8 @@ func _ready():
 	
 func _process(delta):
 	$ParallaxBackground/ProgressBar.value = Global.total_vidas_atual
+	if (Global.total_vidas_atual<=0):
+		get_tree().root.get_node("Fase1/Personagem/Personagem").morrer()
 
 func _criar_inimigo_timeout():
 	#Cria o personagem inimigo
@@ -22,3 +24,7 @@ func _criar_inimigo_timeout():
 	
 	#Imprime o inimigo na tela
 	get_tree().root.get_node(".").add_child(objeto_inimigo)
+
+
+func _on_AudioStreamPlayer_finished():
+	$AudioStreamPlayer.play()
