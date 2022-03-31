@@ -172,6 +172,7 @@ margin_left = 412.0
 margin_top = 402.0
 margin_right = 936.0
 margin_bottom = 538.0
+mouse_filter = 1
 custom_colors/font_color = Color( 0, 0.368627, 1, 1 )
 custom_fonts/font = SubResource( 10 )
 text = "Configuracoes"
@@ -186,5 +187,9 @@ anims/mouse_entra_iniciar = SubResource( 6 )
 anims/mouse_sai_configuracoes = SubResource( 7 )
 anims/mouse_sai_iniciar = SubResource( 8 )
 
+[connection signal="gui_input" from="ParallaxBackground/Iniciar" to="." method="_on_Iniciar_gui_input"]
 [connection signal="mouse_entered" from="ParallaxBackground/Iniciar" to="." method="_on_Iniciar_mouse_entered"]
 [connection signal="mouse_exited" from="ParallaxBackground/Iniciar" to="." method="_on_Iniciar_mouse_exited"]
+[connection signal="gui_input" from="ParallaxBackground/Configuracoes" to="." method="_on_Configuracoes_gui_input"]
+[connection signal="mouse_entered" from="ParallaxBackground/Configuracoes" to="." method="_on_Configuracoes_mouse_entered"]
+[connection signal="mouse_exited" from="ParallaxBackground/Configuracoes" to="." method="_on_Configuracoes_mouse_exited"]

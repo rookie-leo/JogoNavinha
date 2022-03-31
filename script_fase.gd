@@ -7,6 +7,8 @@ func _ready():
 	Global.total_vidas_atual = Global.total_vida_inicial
 	
 func _process(delta):
+	$ParallaxBackground/Label2.text = str(Global.qtd_pontos_atual)
+	
 	$ParallaxBackground/ProgressBar.value = Global.total_vidas_atual
 	if (Global.total_vidas_atual<=0):
 		get_tree().root.get_node("Fase1/Personagem/Personagem").morrer()

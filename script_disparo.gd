@@ -43,7 +43,7 @@ func acerto_disparo(area2dInimigo):
 			area2dInimigo.get_node("AnimationPlayer").play("explodindo")
 		else:
 			area2dInimigo.get_node("AnimationPlayer").play("sofrendo")
-			#Apaga o disparo
+		#Apaga o disparo
 		queue_free()
 
 

@@ -35,5 +35,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			objeto_powerup.global_position = global_position
 			get_tree().root.get_node(".").add_child(objeto_powerup)
 			Global.qtd_inimigos_mortos = 0
+		
+		Global.qtd_pontos_atual += Global.qtd_pontos_por_inimigo
 		#mata o inimigo
 		queue_free()

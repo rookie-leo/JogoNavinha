@@ -9,7 +9,13 @@ var tipo_disparo = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$P1.visible = false
+	$P2.visible = false
+	
+	if (Global.tipo_personagem == 1):
+		$P1.visible = true
+	elif(Global.tipo_personagem == 2):
+		$P2.visible = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var velocidade = 250
