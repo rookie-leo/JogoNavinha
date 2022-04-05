@@ -13,3 +13,6 @@ var tipo_personagem: int
 
 var qtd_pontos_por_inimigo: int = 10
 var qtd_pontos_atual: int = 0
+
+var tocar_musica = true
+var tocar_sons = true
